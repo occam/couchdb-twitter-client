@@ -36,7 +36,6 @@ function TwitterCouch(db, design, callback) {
     design.view('friendsTimeline',{
       startkey : [userId,{}],
       endkey : [userId],
-      group :true,
       descending : true,
       limit : 80,
       success : function(json){
@@ -248,7 +247,6 @@ function TwitterCouch(db, design, callback) {
     design.view('searchResults',{
       startkey : [term,{}],
       endkey : [term],
-      group :true,
       descending : true,
       limit : 80,
       success : function(json){
@@ -320,7 +318,6 @@ function TwitterCouch(db, design, callback) {
       userid = parseInt(userid);
       design.view('userTweets', {
         startkey : [userid,{}],
-        reduce : false,
         limit : 1,
         descending: true,
         success : function(view) {

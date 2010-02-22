@@ -28,7 +28,7 @@
   <script src="/_utils/script/json2.js"></script>
   <script src="/_utils/script/jquery.js?1.2.6"></script>
   <script src="/_utils/script/jquery.couch.js?0.8.0"></script>
-  <script src="/_utils/script/jquery.cookies.js"></script>
+  <script src="jquery.cookies.js"></script>
   <script src="jquery.xdompost.js"></script>
   <script src="md4.js"></script>
   <script src="twitter-couch.js"></script>
@@ -86,7 +86,7 @@
         };
         
         function renderAllTweets(tweets) {
-          r.renderTimeline(applyTweets(tweets), userID);
+          r.renderTimeline(applyTweets(tweets),userID);
         };
         
         function refreshTweets(terms, force) {
@@ -123,7 +123,6 @@
           updateCount();
           setTimeout(function() {
             tw.friendsTimeline(renderAllTweets, true);
-            // tw.friendsTimeline(r.renderTimeline, true);            
           },500);
         });
       });
